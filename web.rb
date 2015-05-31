@@ -20,9 +20,9 @@ end
 DataMapper.finalize
 Flavor.auto_upgrade!
 get '/flavors/new' do
-erb:'flavor/new'
+erb :'flavor/new'
 end
 get '/' do
-"<h1>WELCOME TO NOAH'S ICECREAM PARLOR!</h1>"
+"WELCOME TO NOAH'S ICECREAM PARLOR!"
 end
 
