@@ -16,6 +16,7 @@ class Flavor
   include DataMapper::Resource
   property :id, Serial
   property :name, String
+  property :cost, Float
 end
 DataMapper.finalize
 Flavor.auto_upgrade!
