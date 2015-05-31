@@ -17,3 +17,5 @@ class Flavor
   property :id, Serial
   property :name, String
 end
+DataMapper.finalize
+Flavor.auto_upgrade!
