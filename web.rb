@@ -21,8 +21,8 @@ end
 class Customer
   include DataMapper::Resource
   property :id, Serial
-  property :fname, String
-  property :lname, String
+  property :first_name, String
+  property :last_name, String
 end
 DataMapper.finalize
 Flavor.auto_upgrade!
