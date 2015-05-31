@@ -29,6 +29,7 @@ end
 get 'flavors/:id' do
 if @flavor = Flavor.first( id: params[:id])
 erb :'show/display' , locals: { flavor: @flavor}
+"#{params[:id]}"
 end
 end
 
