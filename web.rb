@@ -20,5 +20,5 @@ end
 DataMapper.finalize
 Flavor.auto_upgrade!
 get '/flavors/new' do
-erb :'flavor/new'
+"hi"
 end
