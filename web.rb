@@ -23,7 +23,7 @@ get '/flavors/new' do
 erb :'flavor/new'
 end
 post '/flavors' do
-@flavors = Flavor.create(params[:flavor])
+@flavor = Flavor.create(params[:flavor])
 redirect to("/flavors/#{@flavor.id}")
 end
 get 'flavors/:id' do
