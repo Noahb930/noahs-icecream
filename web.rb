@@ -15,7 +15,7 @@ end
 class Flavor
   include DataMapper::Resource
   property :id, Serial
-  property :fname, String
+  property :name, String
   property :cost, Float
 end
 DataMapper.finalize
