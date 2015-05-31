@@ -26,7 +26,7 @@ post '/flavors' do
 @flavor = Flavor.create(params[:flavor])
 redirect to("/flavors/#{@flavor.id}")
 end
-get 'flavors/:id' do
+get '/flavors/:id' do
 if @flavor = Flavor.first( id: params[:id])
 erb :'show/display' , locals: { flavor: @flavor}
 "#{params[:id]}"
