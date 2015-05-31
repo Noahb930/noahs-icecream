@@ -6,23 +6,14 @@ require 'data_mapper'
 # http://datamapper.org/docs/properties.html
 #
 
-if ENV['RACK_ENV'] == 'development'
-  DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/app.db")
-else
+if ENV['RACK_ENV'] == 'production'
   DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
-end
-Class Flavor
-include DataMapper::Resource
-property :id, Serial
-property :name, String
-property :cost_in_cents, Integer
-end
-DataMapper.finalize
-Flavor.auto_upgrade!
-get '/flavors/new' do
-erb :'flavor/new'
-end
-get '/' do
-"WELCOME TO NOAH'S ICECREAM PARLOR!"
+else
+  DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/app.db")
 end
 
+class Flavor
+  include DataMapper::Resource
+  property :id, Serial
+  property :name, String
+end
