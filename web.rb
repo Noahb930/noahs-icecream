@@ -22,3 +22,13 @@ Flavor.auto_upgrade!
 get '/flavors/new' do
 erb :'flavor/new'
 end
+get '/flavors' do
+@flavors = Flavor.create(params[:flavor])
+redirect to("/flavors/#{@flavor.id}")
+end
+get 'flavors/:id' do
+if @flavor = Flavor.first(id: params[:id])
+erb :'flavor/display',locals: { flavor: @flavor} , 
+end
+end
+
