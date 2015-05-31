@@ -19,3 +19,6 @@ class Flavor
 end
 DataMapper.finalize
 Flavor.auto_upgrade!
+get '/flavors/new' do
+erb :'flavor/new'
+end
