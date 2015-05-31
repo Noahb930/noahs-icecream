@@ -49,7 +49,7 @@ post '/customers' do
 redirect to("/customers/#{@customer.id}")
 end
 get '/customers/:id' do
-if @customer = Customer.first( id: params[:id])
+if @customer =   Customer.first( id: params[:id])
 erb :'customers/show' , locals: { customer: @customer}
 
 end
