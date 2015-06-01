@@ -27,8 +27,8 @@ end
 class Topping
   include DataMapper::Resource
   property :id, Serial
-  property :first_name, String
-  property :last_name, String
+  property :name, String
+  property :cost, String
 end
 DataMapper.finalize
 Flavor.auto_upgrade!
