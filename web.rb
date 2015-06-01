@@ -57,7 +57,7 @@ redirect to("/toppings/#{@topping.id}")
 end
 get '/toppings/:id' do
 if @topping = Topping.first( id: params[:id])
-erb :'toppings/show' , locals: { topping: @topping}
+erb :'views/toppings/show' , locals: { topping: @topping}
 
 end
 end
