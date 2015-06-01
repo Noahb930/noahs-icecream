@@ -24,9 +24,16 @@ class Customer
   property :first_name, String
   property :last_name, String
 end
+class Topping
+  include DataMapper::Resource
+  property :id, Serial
+  property :first_name, String
+  property :last_name, String
+end
 DataMapper.finalize
 Flavor.auto_upgrade!
 Customer.auto_upgrade!
+Topping.auto_upgrade!
 get '/flavors/new' do
 erb :'flavors/new'
 end
@@ -37,6 +44,20 @@ end
 get '/flavors/:id' do
 if @flavor = Flavor.first( id: params[:id])
 erb :'flavors/show' , locals: { flavor: @flavor}
+
+end
+end
+#_______________________________
+get '/toppings/new' do
+erb :'toppings/new'
+end
+post '/toppings' do
+@topping = Topping.create(params[:topping])
+redirect to("/toppings/#{@topping.id}")
+end
+get '/toppings/:id' do
+if @topping = Topping.first( id: params[:id])
+erb :'toppings/show' , locals: { topping: @topping}
 
 end
 end
