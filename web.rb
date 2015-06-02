@@ -52,12 +52,12 @@ post '/orders' do
 @order = Order.create(params[:order])
 redirect to("/order/#{@order.id}")
 end
-#get '/orders/:id' do
-#if @order = Order.first( id: params[:id])
+get '/orders/:id' do
+if @order = Order.first( id: params[:id])
 #erb :'orders/show' , locals: { order: @order}
 
-#end
-#end
+end
+end
 #__________________________________________
 get '/flavors/new' do
 erb :'flavors/new'
