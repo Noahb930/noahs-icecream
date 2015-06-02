@@ -15,7 +15,7 @@ class Order
   include DataMapper::Resource
   property :id, Serial
   property :first_name, String
- #has n, :flavors
+ has n, :flavors
   #has n, :toppings
 end
 class Flavor
