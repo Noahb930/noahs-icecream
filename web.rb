@@ -10,7 +10,7 @@ if ENV['RACK_ENV'] == 'production'
   DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
 else
   DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/app.db")
-end
+end 
 class Order
   include DataMapper::Resource
   property :id, Serial
