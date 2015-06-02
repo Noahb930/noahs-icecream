@@ -1,10 +1,6 @@
 <form action='/flavors' method='POST'>
  Flavor Name: <input type='text' name='flavor[name]'/> <br/>
  Cost: <input type='text' name='flavor[cost]'/> <br/>
-<select name="song[artist_id]">
-    <% @orders.each do |order| %>
-      <option value="<%= order.id %>"><%= order.first_name %></option>
-    <% end %>
-  </select>
+
   <input type='submit' value='Create Flavor'/>
 </form>
