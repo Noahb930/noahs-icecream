@@ -45,7 +45,9 @@ Flavor.auto_upgrade!
 Customer.auto_upgrade!
 Topping.auto_upgrade!
 #___________________________________________
-#end
+get '/orders/new' do
+	erb: 'orders/new'
+end
 #get '/orders/:id' do
 #if @order = Order.first( id: params[:id])
 #erb :'orders/show' , locals: { order: @order}
