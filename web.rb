@@ -50,7 +50,7 @@ get '/orders/new' do
 end
 post '/orders' do
 @order = Order.create(params[:order])
-redirect to("/order/#{@order.id}")
+redirect to("/orders/#{@order.id}")
 end
 get '/orders/:id' do
 if @order = Order.first( id: params[:id])
