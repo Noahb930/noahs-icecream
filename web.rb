@@ -15,7 +15,7 @@ class Order
   include DataMapper::Resource
   property :id, Serial
   property :first_name, String
- has n, :flavors
+ #has n, :flavors
   #has n, :toppings
 end
 class Flavor
@@ -47,6 +47,10 @@ Topping.auto_upgrade!
 #___________________________________________
 get '/orders/new' do
 	erb   :'orders/new'
+end
+post '/orders' do
+@order = Order.create(params[:order])
+redirect to("/order/#{@order.id}")
 end
 #get '/orders/:id' do
 #if @order = Order.first( id: params[:id])
