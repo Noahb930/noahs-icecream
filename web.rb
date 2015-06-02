@@ -11,13 +11,13 @@ if ENV['RACK_ENV'] == 'production'
 else
   DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/app.db")
 end 
-#class Order
-  #include DataMapper::Resource
- # property :id, Serial
-  #property :first_name, String
+class Order
+  include DataMapper::Resource
+  property :id, Serial
+  property :first_name, String
  # has n, :flavors
   #has n, :toppings
-#end
+end
 class Flavor
   include DataMapper::Resource
   property :id, Serial
