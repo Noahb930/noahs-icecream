@@ -15,7 +15,7 @@ class Order
   include DataMapper::Resource
   property :id, Serial
   property :first_name, String
- has n, :flavors
+ #has n, :flavors
   #has n, :toppings
 end
 class Flavor
@@ -23,7 +23,7 @@ class Flavor
   property :id, Serial
   property :name, String
   property :cost, Float
-  belongs_to :order
+  #belongs_to :order
 end
 class Customer
   include DataMapper::Resource
