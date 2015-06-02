@@ -1,5 +1,11 @@
 <form action='/flavors' method='POST'>
  Flavor Name: <input type='text' name='flavor[name]'/> <br/>
  Cost: <input type='text' name='flavor[cost]'/> <br/>
+   <select name="flavor[order_id]">
+    <% @orders.each do |order| %>
+      <option value="<%= order.id %>"></option>
+    <% end %>
+  </select>
+  <br/>
   <input type='submit' value='Create Flavor'/>
 </form>
