@@ -1,7 +1,7 @@
 <form action='/flavors' method='POST'>
  Flavor Name: <input type='text' name='flavor[name]'/> <br/>
  Cost: <input type='text' name='flavor[cost]'/> <br/>
-   <select name="flavor[order_id]">
+   <select name="flavor[order.id]">
     <% @orders.each do |order| %>
       <option value="<%= order.id %>"<%= order.id %> </option>
     <% end %>
