@@ -22,13 +22,14 @@ class Flavor
   property :id, Serial
   property :name, String
   property :cost, Float
+  belongs_to :order
 end
 class Customer
   include DataMapper::Resource
   property :id, Serial
   property :first_name, String
   property :last_name, String
-  belongs_to :order
+  
 end
 class Topping
   include DataMapper::Resource
