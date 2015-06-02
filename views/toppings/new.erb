@@ -3,7 +3,7 @@ Topping Name: <input type='text' name='topping[name]'/> <br/>
  Cost: <input type='text' name='topping[cost]'/> <br/>
    <select name="topping[order_id]">
     <% @order.each do |order|         %>
-      <option value="<%= order.id %>"></option>
+      <option value="<%= order.id %>"><%= order.id %> </option>
     <% end %>
   </select>
   <br/>
