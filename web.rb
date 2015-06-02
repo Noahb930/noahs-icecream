@@ -46,7 +46,7 @@ Customer.auto_upgrade!
 Topping.auto_upgrade!
 #___________________________________________
 get '/orders/new' do
-	erb: 'orders/new'
+	erb   :'orders/new'
 end
 #get '/orders/:id' do
 #if @order = Order.first( id: params[:id])
