@@ -17,13 +17,13 @@ end
   #property :first_name, String
  # has n, :flavors
   #has n, :toppings
-end
+#end
 class Flavor
   include DataMapper::Resource
   property :id, Serial
   property :name, String
   property :cost, Float
-  belongs_to :order
+  #belongs_to :order
 end
 class Customer
   include DataMapper::Resource
@@ -37,7 +37,7 @@ class Topping
   property :id, Serial
   property :name, String
   property :cost, String
-  belongs_to :order
+  #belongs_to :order
 end
 DataMapper.finalize
 #Order.auto_upgrade!
@@ -48,9 +48,9 @@ Topping.auto_upgrade!
 #end
 #get '/orders/:id' do
 #if @order = Order.first( id: params[:id])
-erb :'orders/show' , locals: { order: @order}
+#erb :'orders/show' , locals: { order: @order}
 
-end
+#end
 #end
 #__________________________________________
 get '/flavors/new' do
