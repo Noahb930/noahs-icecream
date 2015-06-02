@@ -11,12 +11,12 @@ if ENV['RACK_ENV'] == 'production'
 else
   DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/app.db")
 end 
-class Order
-  include DataMapper::Resource
-  property :id, Serial
-  property :first_name, String
-  has n, :flavors
-  has n, :toppings
+#class Order
+  #include DataMapper::Resource
+ # property :id, Serial
+  #property :first_name, String
+ # has n, :flavors
+  #has n, :toppings
 end
 class Flavor
   include DataMapper::Resource
@@ -40,24 +40,18 @@ class Topping
   belongs_to :order
 end
 DataMapper.finalize
-Order.auto_upgrade!
+#Order.auto_upgrade!
 Flavor.auto_upgrade!
 Customer.auto_upgrade!
 Topping.auto_upgrade!
 #___________________________________________
-get '/orders/new' do
-erb :'orders/new'
-end
-post '/orders' do
-@order = Order.create(params[:order])
-redirect to("/orders/#{@order.id}")
-end
-get '/orders/:id' do
-if @order = Order.first( id: params[:id])
+#end
+#get '/orders/:id' do
+#if @order = Order.first( id: params[:id])
 erb :'orders/show' , locals: { order: @order}
 
 end
-end
+#end
 #__________________________________________
 get '/flavors/new' do
 erb :'flavors/new'
