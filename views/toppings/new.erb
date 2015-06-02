@@ -1,11 +1,12 @@
 <form action='/toppings' method='POST'>
 Topping Name: <input type='text' name='topping[name]'/> <br/>
  Cost: <input type='text' name='topping[cost]'/> <br/>
-   <select name="topping[order_id]">
+  <!-- <select name="topping[order_id]">
     <% @order.each do |order|         %>
       <option value="<%= order.id %>"><%= order.first_name %> </option>
     <% end %>
   </select>
+  -->
   <br/>
   <input type='submit' value='Create Topping'/>
 </form>
