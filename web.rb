@@ -16,7 +16,7 @@ class Order
   property :id, Serial
   property :first_name, String
  has n, :flavors
-  #has n, :toppings
+  has n, :toppings
 end
 class Flavor
   include DataMapper::Resource
@@ -37,7 +37,7 @@ class Topping
   property :id, Serial
   property :name, String
   property :cost, String
-  #belongs_to :order
+  belongs_to :order
 end
 DataMapper.finalize
 Order.auto_upgrade!
