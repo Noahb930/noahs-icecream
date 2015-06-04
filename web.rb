@@ -23,7 +23,7 @@ class Flavor
   property :id, Serial
   property :name, String
   property :cost, Float
-  belongs_to :order :required => false
+  belongs_to :order 
 end
 class Customer
   include DataMapper::Resource
