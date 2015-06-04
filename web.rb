@@ -37,7 +37,7 @@ class Topping
   property :id, Serial
   property :name, String
   property :cost, String
-  belongs_to :order :required => false
+  belongs_to :order 
 end
 DataMapper.finalize
 Order.auto_upgrade!
