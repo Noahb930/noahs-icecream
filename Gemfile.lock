@@ -81,3 +81,6 @@ DEPENDENCIES
   dm-postgres-adapter
   dm-sqlite-adapter
   sinatra
+
+BUNDLED WITH
+   1.10.3
