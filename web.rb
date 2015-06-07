@@ -59,7 +59,8 @@ Orderflavor.auto_upgrade!
 
 #___________________________________________
 get '/orders/new' do
-	erb   :'orders/new'
+@toppings = Topping.all
+erb :'orders/new' , locals: {toppings: @toppings}
 end
 post '/orders' do
 @order = Order.create(params[:order])
@@ -87,8 +88,7 @@ end
 end
 #_______________________________
 get '/toppings/new' do
-@orders = Order.all
-erb :'toppings/new' , locals: {orders: @orders}
+erb :'toppings/new'
 end
 post '/toppings' do
 @topping = Topping.create(params[:topping])
