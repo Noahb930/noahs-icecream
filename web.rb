@@ -15,8 +15,10 @@ class Order
   include DataMapper::Resource
   property :id, Serial
   property :first_name, String
- has n, :flavors
-  has n, :toppings 
+  has n, :orderflavors
+ has n, :flavors, through: :orderflavors
+ has n, :ordertoppings
+  has n, :toppings, through: :ordertoppings
   
 end
 class Flavor
@@ -24,7 +26,8 @@ class Flavor
   property :id, Serial
   property :name, String
   property :cost, Float
-  belongs_to :order 
+  has n, :orderflavors
+
 end
 class Customer
   include DataMapper::Resource
@@ -38,13 +41,27 @@ class Topping
   property :id, Serial
   property :name, String
   property :cost, Float
-  #belongs_to :order 
+  has n, :ordertoppings
+end
+class Orderflavor
+include DataMapper::Resource
+property :id, Serial
+belongs_to	:flavor
+belongs_to :order
+end
+class Ordertopping
+include DataMapper::Resource
+property :id, Serial
+belongs_to	:topping
+belongs_to :order
 end
 DataMapper.finalize
 Order.auto_upgrade!
 Flavor.auto_upgrade!
 Customer.auto_upgrade!
 Topping.auto_upgrade!
+Orderflavor.auto_upgrade!
+Ordertopping.auto_upgrade!
 #___________________________________________
 get '/orders/new' do
 	erb   :'orders/new'
@@ -101,4 +118,10 @@ erb :'customers/show' , locals: { customer: @customer}
 
 end
 end
+#_____________________________________________________________
+get '/orderflavors/new' do
+  @orders = Order.all
+  @flavors = Flavor.all
+  erb :'orderflavors/new', locals: { orders: @orders, flavors: @flavors }
 
+end
