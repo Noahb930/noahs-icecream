@@ -18,7 +18,7 @@ class Order
   has n, :orderflavors
  has n, :flavors, through: :orderflavors
  has n, :ordertoppings
-  has n, :toppings, through: :ordertoppings
+  has n, :toppings
   
 end
 class Flavor
@@ -27,7 +27,7 @@ class Flavor
   property :name, String
   property :cost, Float
   has n, :orderflavors
-  has n, :toppings
+
 
 end
 class Customer
