@@ -1,10 +1,10 @@
 <form action='/orderflavors' method='POST'>
- Flavor ID:  <select name="orderflavor[flavor_id]">
+ Flavor Name:  <select name="orderflavor[flavor_id]">
     <% @flavors.each do |flavor| %>
       <option value="<%= flavor.id %>"><%= flavor.name %></option>
     <% end %>
   </select> <br/>
-   Order ID:  <select name="orderflavor[order_id]">
+   Order Name:  <select name="orderflavor[order_id]">
     <% @orders.each do |order| %>
       <option value="<%= order.id %>"><%= order.first_name %></option>
     <% end %>

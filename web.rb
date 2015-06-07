@@ -125,3 +125,13 @@ get '/orderflavors/new' do
   erb :'orderflavors/new', locals: { orders: @orders, flavors: @flavors }
 
 end
+post '/orderflavors' do
+@orderflavor = Orderflavor.create(params[:orderflavor])
+redirect to("/orderflavors/#{@orderflavor.id}")
+end
+get '/orderflavors/:id' do
+if @orderflavor = Orderflavor.first( id: params[:id])
+erb :'orderflavors/show' , locals: { flavor: @flavor, order: @order}
+
+end
+end
