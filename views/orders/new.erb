@@ -3,7 +3,8 @@
  <br/>
   Toppings: 
     <% @toppings.each do |topping| %>
- <input type='checkbox' name='topping[used]'/>
+<input type="hidden" value="0" name="topping[used]" />
+<input type="checkbox" value="1" name="topping[used]" /><%= topping.name %>
     <% end %>
 <br/>
   <input type='submit' value='Create Order'/>
