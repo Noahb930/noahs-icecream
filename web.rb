@@ -17,6 +17,7 @@ class Order
   property :first_name, String
  #has n, :flavors
   #has n, :toppings 
+  
 end
 class Flavor
   include DataMapper::Resource
