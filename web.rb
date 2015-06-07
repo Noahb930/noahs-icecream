@@ -131,8 +131,8 @@ redirect to("/orderflavors/#{@orderflavor.id}")
 end
 get '/orderflavors/:id' do
 if @orderflavor = Orderflavor.first( id: params[:id])
-  @orders = Order.all
-  @flavors = Flavor.all
+  @order = Order.all
+  @flavor = Flavor.all
 erb :'orderflavors/show' , locals: { flavor: @flavor, order: @order}
 
 end
