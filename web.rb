@@ -17,7 +17,6 @@ class Order
   property :first_name, String
   has n, :orderflavors
  has n, :flavors, through: :orderflavors
- has n, :ordertoppings
   has n, :toppings
   
 end
