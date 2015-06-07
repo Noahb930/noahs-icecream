@@ -36,7 +36,7 @@ class Topping
   include DataMapper::Resource
   property :id, Serial
   property :name, String
-  property :cost, String
+  property :cost, Float
   #belongs_to :order 
 end
 DataMapper.finalize
