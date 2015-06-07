@@ -27,6 +27,7 @@ class Flavor
   property :name, String
   property :cost, Float
   has n, :orderflavors
+  has n, :toppings
 
 end
 class Customer
@@ -41,18 +42,13 @@ class Topping
   property :id, Serial
   property :name, String
   property :cost, Float
-  has n, :ordertoppings
+  property :used, Boolean
+  belongs_to :order
 end
 class Orderflavor
 include DataMapper::Resource
 property :id, Serial
 belongs_to	:flavor
-belongs_to :order
-end
-class Ordertopping
-include DataMapper::Resource
-property :id, Serial
-belongs_to	:topping
 belongs_to :order
 end
 DataMapper.finalize
@@ -61,7 +57,7 @@ Flavor.auto_upgrade!
 Customer.auto_upgrade!
 Topping.auto_upgrade!
 Orderflavor.auto_upgrade!
-Ordertopping.auto_upgrade!
+
 #___________________________________________
 get '/orders/new' do
 	erb   :'orders/new'
@@ -92,7 +88,8 @@ end
 end
 #_______________________________
 get '/toppings/new' do
-erb :'toppings/new'
+@orders = Order.all
+erb :'toppings/new' , locals: {orders: @orders}
 end
 post '/toppings' do
 @topping = Topping.create(params[:topping])
