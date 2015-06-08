@@ -5,4 +5,10 @@ First Name: <%= @order.first_name %>
     <li><%= flavor.name %></li>
   <% end %>
 </ul>
+<h2>Toppings:</h2>
+<ul>
+  <% order.toppings.each do |topping| %>
+    <li><%= topping.name %></li>
+  <% end %>
+</ul>
 

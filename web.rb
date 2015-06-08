@@ -148,10 +148,8 @@ post '/ordertoppings' do
 redirect to("/ordertoppings/#{@ordertopping.id}")
 end
 get '/ordertoppings/:id' do
-@orders = Order.all
-  @toppings = Topping.all
 if @ordertopping = Ordertopping.first( id: params[:id])
-erb :'ordertoppings/show' , locals: { toppings: @toppings, orders: @orders}
+redirect to("/orders/#{@ordertopping.order_id}")
 
 end
 end
