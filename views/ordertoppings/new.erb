@@ -1,0 +1,15 @@
+<form action='/ordertoppings' method='POST'>
+Topping Name:  <select name="ordertopping[topping_id]">
+    <% @toppings.each do |topping| %>
+      <option value="<%= topping.id %>"><%= topping.name %></option>
+    <% end %>
+  </select> <br/>
+   Order Name:  <select name="ordertopping[order_id]">
+    <% @orders.each do |order| %>
+      <option value="<%= order.id %>"><%= order.first_name %></option>
+    <% end %>
+  </select> <br/>
+  <br/>
+
+  <input type='submit' value='Create Assosiation'/>
+</form>

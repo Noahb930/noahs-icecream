@@ -1,11 +1,6 @@
 <form action='/orders' method='POST'>
  First Name: <input type='text' name='order[first_name]'/> <br/>
  <br/>
-  Toppings: 
-    <% @toppings.each do |topping| %>
-<input type="hidden" value="0" name="topping[used]" />
-<input type="checkbox" value="1" name="topping[used]" /><%= topping.name %>
-    <% end %>
-<br/>
+
   <input type='submit' value='Create Order'/>
 </form>

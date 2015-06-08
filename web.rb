@@ -17,7 +17,8 @@ class Order
   property :first_name, String
   has n, :orderflavors
  has n, :flavors, through: :orderflavors
-  has n, :toppings
+ has n, :ordertoppings
+  has n, :toppings, through :ordertoppings
   
 end
 class Flavor
@@ -41,13 +42,18 @@ class Topping
   property :id, Serial
   property :name, String
   property :cost, Float
-  property :used, Boolean
-  belongs_to :order
+  has n, :ordertoppings
 end
 class Orderflavor
 include DataMapper::Resource
 property :id, Serial
 belongs_to	:flavor
+belongs_to :order
+end
+class Ordertopping
+include DataMapper::Resource
+property :id, Serial
+belongs_to	:topping
 belongs_to :order
 end
 DataMapper.finalize
@@ -56,7 +62,7 @@ Flavor.auto_upgrade!
 Customer.auto_upgrade!
 Topping.auto_upgrade!
 Orderflavor.auto_upgrade!
-
+Ordertopping.auto_upgrade!
 #___________________________________________
 get '/orders/new' do
 @toppings = Topping.all
@@ -128,6 +134,23 @@ end
 get '/orderflavors/:id' do
 if @orderflavor = Orderflavor.first( id: params[:id])
 erb :'orderflavors/show' , locals: { flavors: @flavors, orders: @orders}
+
+end
+end
+#_____________________________________________________________
+get '/ordertoppings/new' do
+  @orders = Order.all
+  @toppings = Topping.all
+  erb :'ordertoppings/new', locals: { orders: @orders, toppings: @toppings }
+
+end
+post '/ordertoppings' do
+@ordertopping = Ordertopping.create(params[:ordertopping])
+redirect to("/ordertoppings/#{@ordertopping.id}")
+end
+get '/ordertoppings/:id' do
+if @ordertopping = Ordertopping.first( id: params[:id])
+erb :'ordertoppings/show' , locals: { toppings: @toppings, orders: @orders}
 
 end
 end
