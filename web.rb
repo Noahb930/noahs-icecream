@@ -131,10 +131,8 @@ post '/orderflavors' do
 redirect to("/orderflavors/#{@orderflavor.id}")
 end
 get '/orderflavors/:id' do
-@orders = Order.all
-@flavors = Flavor.all
 if @orderflavor = Orderflavor.first( id: params[:id])
-erb :'orderflavors/show' , locals: { flavors: @flavors, orders: @orders}
+redirect to("/orders/#{@orderflavor.order_id}")
 
 end
 end

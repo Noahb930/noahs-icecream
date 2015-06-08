@@ -1,2 +1,8 @@
 First Name: <%= @order.first_name %>
+<h2>Flavors:</h2>
+<ul>
+  <% order.flavors.each do |flavor| %>
+    <li><%= flavor.name %></li>
+  <% end %>
+</ul>
 
