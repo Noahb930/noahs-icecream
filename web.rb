@@ -65,8 +65,7 @@ Orderflavor.auto_upgrade!
 Ordertopping.auto_upgrade!
 #___________________________________________
 get '/orders/new' do
-@toppings = Topping.all
-erb :'orders/new' , locals: {toppings: @toppings}
+erb :'orders/new' , locals: {orders: @orders}
 end
 post '/orders' do
 @order = Order.create(params[:order])
@@ -132,8 +131,8 @@ post '/orderflavors' do
 redirect to("/orderflavors/#{@orderflavor.id}")
 end
 get '/orderflavors/:id' do
- @orders = Order.all
-  @flavors = Flavor.all
+@orders = Order.all
+@flavors = Flavor.all
 if @orderflavor = Orderflavor.first( id: params[:id])
 erb :'orderflavors/show' , locals: { flavors: @flavors, orders: @orders}
 
