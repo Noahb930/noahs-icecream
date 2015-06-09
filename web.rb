@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'data_mapper'
 
+set :public_folder, Proc.new { File.join(root, 'public') }
 # ---------------------------------------------------------
 # Database Stuff
 # http://datamapper.org/docs/properties.html
