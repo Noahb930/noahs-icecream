@@ -1,13 +1,17 @@
 First Name: <%= @order.first_name %>
 <h2>Flavors:</h2>
-<a href="http://localhost:5000/orderflavors/new">Add a flavor</a>
+<form action="/orderflavors/new" method="link">
+<input type="submit" value="Add a flavor">
+</form>
 <ul>
   <% order.flavors.each do |flavor| %>
     <li><%= flavor.name %></li>
   <% end %>
 </ul>
 <h2>Toppings:</h2>
-<a href="http://localhost:5000/ordertoppings/new">Add a topping</a>
+<form action="/ordertoppings/new" method="link">
+<input type="submit" value="Add a topping">
+</form>
 <ul>
   <% order.toppings.each do |topping| %>
     <li><%= topping.name %></li>
