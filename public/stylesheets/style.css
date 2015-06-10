@@ -4,13 +4,13 @@ margin-top: 60px;
 }
 input[type=submit]{
 border: 1px solid #000;
-background-color: #fff;
+background-color: #3377ff;
 }
 input[type=submit]:hover{
 border: 1px solid #000;
-background-color:#3399ff;
+background-color:#00f;
 }
 input[type=text]{
 border: 1px solid #000;
-background-color:#3377ff;
+background-color:#3399ff;
 }
