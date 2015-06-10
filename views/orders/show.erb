@@ -1,5 +1,5 @@
-First Name: <%= @order.first_name %>
-<h2>Flavors:</h2>
+<p>First Name:</p> <%= @order.first_name %>
+<h3>Flavors:</h3>
 <form action="/orderflavors/new" method="link">
 <input type="submit" value="Add a flavor">
 </form>
@@ -8,7 +8,7 @@ First Name: <%= @order.first_name %>
     <li><%= flavor.name %></li>
   <% end %>
 </ul>
-<h2>Toppings:</h2>
+<h3>Toppings:</h3>
 <form action="/ordertoppings/new" method="link">
 <input type="submit" value="Add a topping">
 </form>
