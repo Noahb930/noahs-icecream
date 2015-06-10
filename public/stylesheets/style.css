@@ -5,22 +5,22 @@ font:  bold 20px arial, sans-serif;
 }
 input[type=submit]{
 border: 1px solid #000;
-background-color: #3377ff;
+background-color: #3377FF;
 }
 input[type=submit]:hover{
 border: 1px solid #000;
-background-color:#00f;
+background-color:#00F;
 }
 input[type=text]{
 border: 2px solid #000;
-background-color:#3399ff;
+background-color:#3399FF;
 }
 li{
-color: #00f;
+color: #00F;
 }
 p{
-color:#3366ff;
+color:#3366FF;
 }
 body{
-background-color:#bbffff;
+background-color:#BBFFFF;
 }
