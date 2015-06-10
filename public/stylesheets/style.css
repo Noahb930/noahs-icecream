@@ -10,3 +10,7 @@ input[type=submit]:hover{
 border: 1px solid #000;
 background-color:#3399ff;
 }
+input[type=submit]{
+border: 1px solid #000;
+background-color:#3377ff;
+}
