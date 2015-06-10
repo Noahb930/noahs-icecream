@@ -154,6 +154,3 @@ redirect to("/orders/#{@ordertopping.order_id}")
 
 end
 end
-not_found do
-halt 404, redirect to("/orders/new")
-end
