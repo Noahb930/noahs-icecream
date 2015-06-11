@@ -6,7 +6,7 @@
 </form>
 <ul>
   <% order.flavors.each do |flavor| %>
-    <li><%= flavor.name %></li>
+    <li><%= flavor.name %> (<%= topping.cost %>)</li>
   <% end %>
 </ul>
 <h3>Toppings:</h3>
@@ -15,7 +15,7 @@
 </form>
 <ul>
   <% order.toppings.each do |topping| %>
-    <li><%= topping.name %></li>
+    <li><%= topping.name %> (<%= topping.cost %>)</li>
   <% end %>
 </ul>
 </body>
