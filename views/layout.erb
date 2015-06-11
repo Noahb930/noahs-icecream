@@ -17,6 +17,31 @@
   </head>
 
 <body style="background-color:#BBFFFF">
+<nav>
+	<ul>
+		<li>
+			<a href="/">Home</a>
+		</li>
+		<li>
+			<a href="/flavors">Flavors</a>
+			<ul>
+				<% @flavors.each do |flavor| %>
+      			<a href="flavors/<%= flavor.id %>"><%= flavor.name %></a> 
+    			<% end %>
+    		</ul>
+		</li>
+		<li>
+			<a href="/toppings">Toppings</a>
+		</li>
+		<li>
+			<a href="/orders/new">Order</a>
+		</li>
+	</nav>
+		
+			
+			
+			
+			
   <%= yield %>
 </body>
 
