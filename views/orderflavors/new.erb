@@ -2,7 +2,7 @@
 <form action='/orderflavors' method='POST'>
  Flavor Name:  <select name="orderflavor[flavor_id]">
     <% @flavors.each do |flavor| %>
-      <option value="<%= flavor.id %>"><%= flavor.name %></option>
+      <option value="<%= flavor.id %>"><%= flavor.name  %> (<%= flavor.cost %></option>
     <% end %>
   </select> <br/>
    Order Name:  <select name="orderflavor[order_id]">
