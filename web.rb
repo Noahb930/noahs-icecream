@@ -129,13 +129,7 @@ get '/orderflavors/new' do
 end
 post '/orderflavors' do
 @orderflavor = Orderflavor.create(params[:orderflavor])
-redirect to("/orderflavors/#{@orderflavor.id}")
-end
-get '/orderflavors/:id' do
-if @orderflavor = Orderflavor.first( id: params[:id])
 redirect to("/orders/#{@orderflavor.order_id}")
-
-end
 end
 #_____________________________________________________________
 get '/ordertoppings/new' do
@@ -146,11 +140,6 @@ get '/ordertoppings/new' do
 end
 post '/ordertoppings' do
 @ordertopping = Ordertopping.create(params[:ordertopping])
-redirect to("/ordertoppings/#{@ordertopping.id}")
-end
-get '/ordertoppings/:id' do
-if @ordertopping = Ordertopping.first( id: params[:id])
 redirect to("/orders/#{@ordertopping.order_id}")
+end
 
-end
-end
