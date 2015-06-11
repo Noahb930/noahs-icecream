@@ -2,7 +2,7 @@
 <form action='/ordertoppings' method='POST'>
 Topping Name:  <select name="ordertopping[topping_id]">
     <% @toppings.each do |topping| %>
-      <option value="<%= topping.id %>"><%= topping.name %> (<%= topping.cost %>)</option>
+      <option value="<%= topping.id %>"><%= topping.name %> ($<%= topping.cost %>)</option>
     <% end %>
   </select> <br/>
    Order Name:  <select name="ordertopping[order_id]">
