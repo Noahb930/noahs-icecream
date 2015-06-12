@@ -19,7 +19,7 @@
   <% end %>
 </ul>
 
- <% orders.each do |order| %>
+ <% @orders.each do |order| %>
     <a href="/orders/<%= order.id %>/edit">edit <%= order.id%></a>
   <% end %>
 </body>
