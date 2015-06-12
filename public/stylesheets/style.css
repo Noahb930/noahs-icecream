@@ -1,6 +1,5 @@
 *{
-margin-left: 250px;
-margin-top: 60px;
+
 font:  bold 20px arial, sans-serif;
 }
 input[type=submit]{
@@ -10,10 +9,14 @@ background-color: #3377FF;
 input[type=submit]:hover{
 border: 1px solid #000;
 background-color:#00F;
+margin-left: 250px;
+margin-top: 60px;
 }
 input[type=text]{
 border: 2px solid #000;
 background-color:#3399FF;
+margin-left: 250px;
+margin-top: 60px;
 }
 li{
 color: #00F;
