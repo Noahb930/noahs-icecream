@@ -72,11 +72,19 @@ post '/orders' do
 @order = Order.create(params[:order])
 redirect to("/orders/#{@order.id}")
 end
+patch '/orders' do
+@order = Order.update(params[:order])
+redirect to("/orders/#{@order.id}")
+end
 get '/orders/:id' do
 if @order = Order.first( id: params[:id])
 erb :'orders/show' , locals: { order: @order}
 
 end
+end
+get '/orders/:id/edit' do
+@orders = Order.all
+erb :'orders/edit'
 end
 #__________________________________________
 get '/flavors/new' do
