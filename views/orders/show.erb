@@ -15,12 +15,9 @@
 </form>
 <ul>
   <% order.toppings.each do |topping| %>
-    <li><%= topping.name %> </li>
+    <li><%= topping.name %> <a href="/orders/<%= order.id %>/edit">edit <%= order.id%></a></li>
   <% end %>
 </ul>
 
- <% orders.each do |order| %>
-    <a href="/orders/<%= order.id %>/edit">edit <%= order.id%></a>
-  <% end %>
 </body>
 
