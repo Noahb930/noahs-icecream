@@ -139,6 +139,11 @@ post '/orderflavors' do
 @orderflavor = Orderflavor.create(params[:orderflavor])
 redirect to("/orders/#{@orderflavor.order_id}")
 end
+delete '/orderflavors/:id/delete' do
+@orderflavor=Orderflavor.get(params[:id])
+@station.destroy!
+redirect to("/orders/#{@orderflavor.order_id}")
+end
 #_____________________________________________________________
 get '/ordertoppings/new' do
   @orders = Order.all
