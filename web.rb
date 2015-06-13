@@ -116,6 +116,11 @@ erb :'toppings/show' , locals: { topping: @topping}
 
 end
 end
+delete '/toppings/:id/delete' do
+@topping=Topping.get(params[:id])
+@topping.destroy!
+redirect to("/toppings")
+end
 #_____________________________________________________________
 get '/orderflavors/new' do
   @orders = Order.all
