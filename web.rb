@@ -21,7 +21,7 @@ class Order
  has n, :ordertoppings
   has n, :toppings, through: :ordertoppings
   
-  validates_presence_of :name
+  validates_presence_of :first_name
   
 end
 class Flavor
