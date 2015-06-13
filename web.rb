@@ -79,7 +79,11 @@ erb :'orders/new' , locals: {orders: @orders}
 end
 post '/orders' do
 @order = Order.create(params[:order])
-redirect to("/orders/#{@order.id}")
+if @order.save
+    redirect to("/orders/#{@order.id}")
+  else
+    erb :'orders/new'
+  end
 end
 get '/orders/:id' do
 if @order = Order.first( id: params[:id])
@@ -100,7 +104,11 @@ erb :'/flavors/index' , locals: { flavor: @flavor}
 end
 post '/flavors' do
 @flavor = Flavor.create(params[:flavor])
-redirect to("/flavors/#{@flavor.id}")
+if @flavor.save
+    redirect to("/flavors/#{@flavor.id}")
+  else
+    erb :'flavors/new'
+  end
 end
 get '/flavors/:id' do
 if @flavor = Flavor.first( id: params[:id])
@@ -120,7 +128,11 @@ erb :'toppings/new'
 end
 post '/toppings' do
 @topping = Topping.create(params[:topping])
-redirect to("/toppings/#{@topping.id}")
+if @topping.save
+    redirect to("/toppings/#{@topping.id}")
+  else
+    erb :'toppings/new'
+  end
 end
 get '/toppings/:id' do
 if @topping = Topping.first( id: params[:id])
