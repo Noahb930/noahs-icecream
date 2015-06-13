@@ -86,6 +86,9 @@ end
 get '/flavors/new' do
 erb :'flavors/new'
 end
+get '/flavors' do
+erb :'/flavors/index'
+end
 post '/flavors' do
 @flavor = Flavor.create(params[:flavor])
 redirect to("/flavors/#{@flavor.id}")
