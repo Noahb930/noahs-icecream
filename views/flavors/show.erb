@@ -1,4 +1,8 @@
 <body>
 <p>Flavor Name: <%= @flavor.name %></p> <br/>
 <p>Cost: <%= @flavor.cost %> </p>
+ <form action='/flavors/<%= flavor.id %>/delete' method='POST'>
+            <input type='hidden' name='_method' value='DELETE'/>
+            <button>Delete</button>
+          </form>
 </body>

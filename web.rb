@@ -96,6 +96,12 @@ erb :'flavors/show' , locals: { flavor: @flavor}
 
 end
 end
+delete '/flavors/:id/delete' do
+@flavor=Flavor.get(params[:id])
+@flavor.destroy!
+redirect to("/flavors")
+end
+
 #_______________________________
 get '/toppings/new' do
 erb :'toppings/new'
@@ -107,20 +113,6 @@ end
 get '/toppings/:id' do
 if @topping = Topping.first( id: params[:id])
 erb :'toppings/show' , locals: { topping: @topping}
-
-end
-end
-#_______________________________
-get '/customers/new' do
-erb :'customers/new'
-end
-post '/customers' do
-@customer = Customer.create(params[:customer])
-redirect to("/customers/#{@customer.id}")
-end
-get '/customers/:id' do
-if @customer =   Customer.first( id: params[:id])
-erb :'customers/show' , locals: { customer: @customer}
 
 end
 end
