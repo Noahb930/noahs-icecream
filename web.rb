@@ -21,6 +21,8 @@ class Order
  has n, :ordertoppings
   has n, :toppings, through: :ordertoppings
   
+  validates_presence_of :name
+  
 end
 class Flavor
   include DataMapper::Resource
@@ -28,7 +30,10 @@ class Flavor
   property :name, String
   property :cost, Float
   has n, :orderflavors
-
+  
+  validates_presence_of :name
+  validates_presence_of :cost
+  validates_numericality_of :cost
 
 end
 class Customer
@@ -44,6 +49,10 @@ class Topping
   property :name, String
   property :cost, Float
   has n, :ordertoppings
+  
+  validates_presence_of :name
+  validates_presence_of :cost
+  validates_numericality_of :cost
 end
 class Orderflavor
 include DataMapper::Resource
