@@ -14,6 +14,7 @@
 <ul>
   <% order.orderflavors.each do |orderflavor| %>
     <li>
+    <%= orderflavor.flavor.name %> 
       <form action='/orderflavors/<%= orderflavor.id %>/delete' method='POST'>
             <input type='hidden' name='_method' value='DELETE'/>
             <button>Delete</button>
@@ -22,7 +23,7 @@
   <% end %>
 </ul>
 <h3>Toppings:</h3>
-<%= orderflavor.flavor.name %> 
+
 <form action="/ordertoppings/new" method="link">
 <input type="submit" value="Add a topping">
 </form>
