@@ -151,4 +151,8 @@ post '/ordertoppings' do
 @ordertopping = Ordertopping.create(params[:ordertopping])
 redirect to("/orders/#{@ordertopping.order_id}")
 end
-
+delete '/ordertoppings/:id/delete' do
+@ordertopping=Ordertopping.get(params[:id])
+@ordertopping.destroy!
+redirect to("/orders/#{@ordertopping.order_id}")
+end

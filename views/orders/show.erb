@@ -5,13 +5,6 @@
 <input type="submit" value="Add a flavor">
 </form>
 <ul>
-  <% order.flavors.each do |flavor| %>
-    <li>
-    <%= flavor.name %> 
-    </li>
-  <% end %>
-</ul>
-<ul>
   <% order.orderflavors.each do |orderflavor| %>
     <li>
     <%= orderflavor.flavor.name %> 
@@ -28,10 +21,14 @@
 <input type="submit" value="Add a topping">
 </form>
 <ul>
-  <% order.toppings.each do |topping| %>
-    <li><%= topping.name %> 
-   
-</form></li>
+  <% order.ordertoppings.each do |ordertopping| %>
+    <li>
+    <%= ordertopping.topping.name %> 
+      <form action='/ordertoppings/<%= ordertopping.id %>/delete' method='POST'>
+            <input type='hidden' name='_method' value='DELETE'/>
+            <button>Delete</button>
+          </form>
+    </li>
   <% end %>
 </ul>
 
