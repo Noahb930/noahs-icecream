@@ -15,7 +15,9 @@
 </form>
 <ul>
   <% order.toppings.each do |topping| %>
-    <li><%= topping.name %> <a href="/orders/<%= order.id %>/edit">edit <%= order.id%></a></li>
+    <li><%= topping.name %> <form action="/orders/<%= order.id %>/edit" method="link">
+<input type="submit" value="edit">
+</form></li>
   <% end %>
 </ul>
 
