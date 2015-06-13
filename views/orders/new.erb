@@ -1,7 +1,7 @@
 <body>
 <form action='/orders' method='POST'>
- <%placeholder_message = @order.errors[:first_name].length ?  @order.errors[:first_name][0] : 'First Name'%>
- First Name: <input type='text' name='order[first_name]'/> 
+ 
+ First Name: <input type='text' name='order[first_name]'<%placeholder_message = @order.errors[:first_name].length ?  @order.errors[:first_name][0] : 'First Name'%>/> 
  <span class='errors'><%= @order.errors[:first_name][0] %></span><br/>
 
   <input type='submit' value='Create Order'/>
