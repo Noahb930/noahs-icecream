@@ -5,6 +5,8 @@ font:  bold 20px arial, sans-serif;
 input[type=submit]{
 border: 1px solid #000;
 background-color: #3377FF;
+margin-left: 250px;
+margin-top: 60px;
 }
 input[type=submit]:hover{
 border: 1px solid #000;
