@@ -75,6 +75,7 @@ Orderflavor.auto_upgrade!
 Ordertopping.auto_upgrade!
 #___________________________________________
 get '/orders/new' do
+@orders= Order.all
 erb :'orders/new' , locals: {orders: @orders}
 end
 post '/orders' do
@@ -90,10 +91,6 @@ if @order = Order.first( id: params[:id])
 erb :'orders/show' , locals: { order: @order}
 
 end
-end
-get '/orders/:id/edit' do
-@orders = Order.all
-erb :'orders/edit'
 end
 #__________________________________________
 get '/flavors/new' do
