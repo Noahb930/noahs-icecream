@@ -137,7 +137,7 @@ redirect to("/orders/#{@orderflavor.order_id}")
 end
 delete '/orderflavors/:id/delete' do
 @orderflavor=Orderflavor.get(params[:id])
-@station.destroy!
+@orderflavor.destroy!
 redirect to("/orders/#{@orderflavor.order_id}")
 end
 #_____________________________________________________________
