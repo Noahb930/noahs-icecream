@@ -87,6 +87,7 @@ get '/flavors/new' do
 erb :'flavors/new'
 end
 get '/flavors' do
+@flavors=Flavor.all
 erb :'/flavors/index'
 end
 post '/flavors' do
