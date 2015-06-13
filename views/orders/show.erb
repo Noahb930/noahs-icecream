@@ -6,7 +6,14 @@
 </form>
 <ul>
   <% order.flavors.each do |flavor| %>
-    <li><%= flavor.name %> 
+    <li>
+    <%= flavor.name %> 
+    </li>
+  <% end %>
+</ul>
+<ul>
+  <% order.orderflavors.each do |orderflavor| %>
+    <li>
       <form action='/orderflavors/<%= orderflavor.id %>/delete' method='POST'>
             <input type='hidden' name='_method' value='DELETE'/>
             <button>Delete</button>
