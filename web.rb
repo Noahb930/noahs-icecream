@@ -87,8 +87,7 @@ get '/flavors/new' do
 erb :'flavors/new'
 end
 get '/flavors' do
-@flavors=Flavor.all
-erb :'/flavors/index'
+erb :'/flavors/index' , locals: { flavor: @flavor}
 end
 post '/flavors' do
 @flavor = Flavor.create(params[:flavor])
