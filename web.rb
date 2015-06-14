@@ -97,9 +97,7 @@ get '/flavors/new' do
 @flavor = Flavor.new
 erb :'flavors/new'
 end
-get '/flavors' do
-erb :'/flavors/index' , locals: { flavor: @flavor}
-end
+
 post '/flavors' do
 @flavor = Flavor.create(params[:flavor])
 if @flavor.save
@@ -107,6 +105,9 @@ if @flavor.save
   else
     erb :'flavors/new'
   end
+end
+get '/flavors' do
+erb :'/flavors/index' , locals: { flavor: @flavor}
 end
 get '/flavors/:id' do
 if @flavor = Flavor.first( id: params[:id])
