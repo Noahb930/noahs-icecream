@@ -108,7 +108,7 @@ if @flavor.save
 end
 get '/flavors' do
 @flavors=Flavor.all
-erb :'/flavors/index' , locals: { flavor: @flavor}
+erb :'/flavors/index'
 end
 get '/flavors/:id' do
 if @flavor = Flavor.first( id: params[:id])
