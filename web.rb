@@ -135,6 +135,10 @@ if @topping.save
     erb :'toppings/new'
   end
 end
+get '/toppings' do
+@toppings=Topping.all
+erb :'/toppings/index'
+end
 get '/toppings/:id' do
 if @topping = Topping.first( id: params[:id])
 erb :'toppings/show' , locals: { topping: @topping}
