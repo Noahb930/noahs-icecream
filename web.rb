@@ -107,6 +107,7 @@ if @flavor.save
   end
 end
 get '/flavors' do
+@flavors=Flavor.all
 erb :'/flavors/index' , locals: { flavor: @flavor}
 end
 get '/flavors/:id' do
