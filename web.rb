@@ -73,6 +73,10 @@ Customer.auto_upgrade!
 Topping.auto_upgrade!
 Orderflavor.auto_upgrade!
 Ordertopping.auto_upgrade!
+#_______________________________
+get '/'do
+erb :'index'
+end
 #___________________________________________
 get '/orders/new' do
 @order = Order.new
