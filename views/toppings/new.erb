@@ -1,9 +1,13 @@
 <body>
 <form action='/toppings' method='POST'>
-Topping Name: <input type='text' name='topping[name]'/> <br/>
- Cost: <input type='text' name='topping[cost]'/> <br/>
+Topping Name: <input type='text' name='topping[name]'/>
+ <span class='errors'><%= @topping.errors[:name][0] %></span><br/>
+ <br/>
+ Cost: <input type='text' name='topping[cost]'/>
+  <span class='errors'><%= @topping.errors[:cost][0] %></span><br/>
+
  
-  <br/>
+
   <input type='submit' value='Create Topping'/>
 </form>
 </body>

@@ -1,7 +1,10 @@
 <body>
 <form action='/flavors' method='POST'>
- Flavor Name: <input type='text' name='flavor[name]'/> <br/>
- Cost: <input type='text' name='flavor[cost]'/> <br/>
+ Flavor Name: <input type='text' name='flavor[name]'/> 
+  <span class='errors'><%= @flavor.errors[:name][0] %></span><br/>
+
+ Cost: <input type='text' name='flavor[cost]'/>
+ <span class='errors'><%= @flavor.errors[:cost][0] %></span><br/>
 
   <input type='submit' value='Create Flavor'/>
 </form>
