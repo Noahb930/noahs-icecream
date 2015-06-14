@@ -94,6 +94,7 @@ end
 end
 #__________________________________________
 get '/flavors/new' do
+@flavor = Flavor.new
 erb :'flavors/new'
 end
 get '/flavors' do
@@ -121,6 +122,7 @@ end
 
 #_______________________________
 get '/toppings/new' do
+@topping = Topping.new
 erb :'toppings/new'
 end
 post '/toppings' do
