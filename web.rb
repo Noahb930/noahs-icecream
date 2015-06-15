@@ -120,12 +120,21 @@ erb :'flavors/show' , locals: { flavor: @flavor}
 
 end
 end
-delete '/flavors/:id/delete' do
+delete 'admin/flavors/:id/delete' do
 @flavor=Flavor.get(params[:id])
 @flavor.destroy!
-redirect to("/flavors")
+redirect to("/admin/flavors")
 end
+get '/admin/flavors' do
+@flavors=Flavor.all
+erb :'/flavors/a-index'
+end
+get '/admin/flavors/:id' do
+if @flavor = Flavor.first( id: params[:id])
+erb :'flavors/a-show' , locals: { flavor: @flavor}
 
+end
+end
 #_______________________________
 get '/toppings/new' do
 @topping = Topping.new
@@ -149,10 +158,20 @@ erb :'toppings/show' , locals: { topping: @topping}
 
 end
 end
-delete '/toppings/:id/delete' do
+delete 'admin/toppings/:id/delete' do
 @topping=Topping.get(params[:id])
 @topping.destroy!
-redirect to("/toppings")
+redirect to("/admin/toppings")
+end
+get '/admin/toppings' do
+@toppings=Topping.all
+erb :'/toppings/a-index'
+end
+get '/admin/toppings/:id' do
+if @topping = Topping.first( id: params[:id])
+erb :'Toppings/a-show' , locals: { topping: @topping}
+
+end
 end
 #_____________________________________________________________
 get '/orderflavors/new' do

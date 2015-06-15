@@ -1,0 +1,12 @@
+
+<form action="/toppings/new" method="link">
+<input type="submit" value="Create a topping">
+</form>
+<ul>
+  <% @toppings.each do |topping| %>
+    <li>
+    	<a href="/toppings/<%= topping.id	%>"><%= topping.name %></a>
+    </li>
+  <% end %>
+</ul>
+		
