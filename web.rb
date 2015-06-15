@@ -120,7 +120,7 @@ erb :'flavors/show' , locals: { flavor: @flavor}
 
 end
 end
-delete 'admin/flavors/:id/delete' do
+delete '/admin/flavors/:id/delete' do
 @flavor=Flavor.get(params[:id])
 @flavor.destroy!
 redirect to("/admin/flavors")
@@ -158,7 +158,7 @@ erb :'toppings/show' , locals: { topping: @topping}
 
 end
 end
-delete 'admin/toppings/:id/delete' do
+delete '/admin/toppings/:id/delete' do
 @topping=Topping.get(params[:id])
 @topping.destroy!
 redirect to("/admin/toppings")
