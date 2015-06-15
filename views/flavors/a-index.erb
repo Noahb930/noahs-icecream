@@ -1,11 +1,11 @@
 
-<form action="/admin/flavors/new" method="get">
-password:<input type="password" value="pass">
+<form action="/flavors/new" method="link">
+<input type="submit" value="create flavor"/>
 </form>
 <ul>
   <% @flavors.each do |flavor| %>
     <li>
-    	<a href="/flavors/<%= flavor.id	%>"><%= flavor.name %></a>
+    	<a href="admin/flavors/<%= flavor.id	%>"><%= flavor.name %></a>
     </li>
   <% end %>
 </ul>
