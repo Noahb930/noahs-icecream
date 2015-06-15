@@ -1,7 +1,7 @@
 <body>
 <p>Topping Name: <%= @topping.name %></p> <br/>
 <p>Cost:</p> <%= @topping.cost %> 
- <form action='/toppings/<%= topping.id %>/delete' method='POST'>
+ <form action='admin/toppings/<%= topping.id %>/delete' method='POST'>
             <input type='hidden' name='_method' value='DELETE'/>
             <button>Delete</button>
           </form>
