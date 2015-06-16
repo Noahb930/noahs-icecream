@@ -39,8 +39,12 @@ text-align: center;
 .menu-bar ul li{
 display:inline;
 }
+.menu-bar ul a{
+color: #00F;
+margin-left: 25%;
+}
 .menu-bar ul a:hover{
-padding:10px 6px;
+padding:25% 6px;
 background-color: #00F;
 color: #FFF;
 }
