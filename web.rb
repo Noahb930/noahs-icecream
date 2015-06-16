@@ -30,7 +30,7 @@ class Flavor
   property :name, String
   property :cost, Float
   has n, :orderflavors
-  
+property :img_src, String
   validates_presence_of :name
   validates_presence_of :cost
   validates_numericality_of :cost
@@ -48,6 +48,7 @@ class Topping
   property :id, Serial
   property :name, String
   property :cost, Float
+property :img_src, String
   has n, :ordertoppings
   
   validates_presence_of :name
