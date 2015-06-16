@@ -1,4 +1,5 @@
 <body>
+<img src=<%= topping.img_src %> />
 <p>Topping Name: <%= @topping.name %></p> <br/>
 <p>Cost:</p> <%= @topping.cost %> 
  <form action='/admin/toppings/<%= topping.id %>/delete' method='POST'>

@@ -1,4 +1,5 @@
 <body>
+<img src=<%= flavor.img_src %> />
 <p>Flavor Name: <%= @flavor.name %></p> <br/>
 <p>Cost: <%= @flavor.cost %> </p>
  <form action='/admin/flavors/<%= flavor.id %>/delete' method='POST'>
