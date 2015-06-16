@@ -41,10 +41,10 @@ display:inline;
 }
 .menu-bar ul a{
 color: #00F;
-margin-left: 25%;
+margin-left: 15%;
 }
 .menu-bar ul a:hover{
-padding:25% 6px;
+padding:8% 6px;
 background-color: #00F;
 color: #FFF;
 }
