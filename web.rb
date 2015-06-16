@@ -97,15 +97,15 @@ erb :'orders/show' , locals: { order: @order}
 end
 end
 #__________________________________________
-get '/flavors/new' do
+get '/admin/flavors/new' do
 @flavor = Flavor.new
 erb :'flavors/new'
 end
 
-post '/flavors' do
+post '/admin/flavors' do
 @flavor = Flavor.create(params[:flavor])
 if @flavor.save
-    redirect to("/flavors/#{@flavor.id}")
+    redirect to("/admin/flavors/#{@flavor.id}")
   else
     erb :'flavors/new'
   end
@@ -136,14 +136,14 @@ erb :'flavors/a-show' , locals: { flavor: @flavor}
 end
 end
 #_______________________________
-get '/toppings/new' do
+get '/admin/toppings/new' do
 @topping = Topping.new
 erb :'toppings/new'
 end
-post '/toppings' do
+post '/admin/toppings' do
 @topping = Topping.create(params[:topping])
 if @topping.save
-    redirect to("/toppings/#{@topping.id}")
+    redirect to("/admin/toppings/#{@topping.id}")
   else
     erb :'toppings/new'
   end
