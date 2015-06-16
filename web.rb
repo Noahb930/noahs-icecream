@@ -169,7 +169,7 @@ erb :'/toppings/a-index'
 end
 get '/admin/toppings/:id' do
 if @topping = Topping.first( id: params[:id])
-erb :'Toppings/a-show' , locals: { topping: @topping}
+erb :'toppings/a-show' , locals: { topping: @topping}
 
 end
 end
