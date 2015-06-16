@@ -37,7 +37,7 @@ border: 2px solid #000;
 text-align: center;
 }
 .menu-bar ul a:hover{
-padding:10px 6px
+padding:10px 6px;
 background-color: #00F;
-color: #000;
+color: #FFF;
 }
